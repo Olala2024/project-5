@@ -1,6 +1,7 @@
 import streamlit as st
 
 def page_project_hypotheses_body():
+    st.title("Project Hypotheses")
     st.markdown(
         """
         * [Hypothesis 1: Higher Overall Quality Leads to Higher Sale Prices](#hypothesis-1-higher-overall-quality-leads-to-higher-sale-prices)
