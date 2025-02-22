@@ -79,11 +79,64 @@ The factors that make a house desirable and valuable in her area may differ sign
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+#### Business Requirement 1 (BR1): Data Visualization and Correlation Study
+
+To understand how various house attributes correlate with the sale price, we will perform the following tasks:
+
+1. **Inspect Sale Price Distribution**:
+   - Plot a histogram of the sale prices to understand their distribution.
+
+2. **Correlation Analysis**:
+   - Compute both Pearson and Spearman correlation coefficients to study the magnitudes and directions of correlation between the attributes and sale price of the houses.
+
+3. **Visualize Key Variables**:
+   - Plot scatter plots of key variables against the sale price to illustrate the nature of their relationships.
+
+The [correlation study notebook](https://github.com/Olala2024/project-5/blob/main/jupyter_notebooks/03-CorrelationStudy.ipynb) will handle this business requirement by providing insights into the relationships between house attributes and sale prices through data visualizations and correlation analysis.
+
+#### Business Requirement 2 (BR2): Regression Analysis
+
+To predict the sale price of houses, we will use regression analysis, as the target variable (sale price) is continuous. The following tasks will be performed:
+
+1. **Feature Importance**:
+   - Identify the most important variables that contribute significantly to the sale price. This will help the client maximize the price by leveraging these factors.
+
+2. **Regression Model**:
+   - Develop a regression model to predict the sale price of houses based on the provided dataset.
+
+3. **Model Evaluation**:
+   - Evaluate the performance of the regression model using appropriate metrics (e.g., Mean Squared Error, R² Score) to ensure its reliability.
+
+[The Modeling and Evaluation notebook](https://github.com/Olala2024/project-5/blob/main/jupyter_notebooks/05-ModelingandEvaluation.ipynb) will handle this business requirement by developing and evaluating a predictive model for house prices.
 
 ## ML Business Case
 
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+### Regression Model
+
+We want a machine learning model to predict the sale price of houses based on various attributes (e.g., size, location, number of bedrooms) using previously gathered housing data from Ames, Iowa. The target variable, 'SalePrice', is continuous and represents the sale price of the houses.
+
+We will consider a regression model, a supervised model with a continuous output that matches the target variable.
+
+**Model Success Metrics**:
+- The model will be considered successful if it achieves at least 70% R² score on the test set.
+
+**Model Failure Criteria**:
+- The model will be considered a failure if it fails to achieve a 70% R² score on the test set.
+
+**Model Output**:
+- The model output is defined as the predicted sale price of a house based on its attributes.
+
+**Training Data**:
+- The training data to fit the model comes from a public dataset provided by the client, sourced from [Kaggle](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data).
+
+**Dataset Details**:
+- The dataset contains approximately 1.5 thousand observations and various attributes representing housing records from Ames, Iowa, including attributes such as Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built, and their respective sale prices for houses built between 1872 and 2010.
+
+**Target Variable**:
+- SalePrice
+
+**Features**:
+- All other attributes in the dataset.
 
 ## Dashboard Design
 
