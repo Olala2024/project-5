@@ -1,30 +1,3 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for the Heritage Housing project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-2. In your new repo click on the green Code button
-
-3. Then, from the Codespaces tab, click Create codespace on main.
-
-5. Wait for the workspace to open. This can take a few minutes.
-
-6. Open a new terminal and `pip3 install -r requirements.txt`
-
-7. Open the jupyter_notebooks directory and click on the notebook you want to open.
-
-8. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.12.1 as it inherits from the workspace so it will be Python-3.12.1 as installed by Codespaces. To confirm this you can use `! python --version` in a notebook code cell.
 
 ## Cloud IDE Reminders
 
@@ -38,17 +11,19 @@ To log into the Heroku toolbelt CLI:
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
 
-## Dataset Content
+## 1. Dataset Content
 
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
+The table below indicates the variables, their description and units of measurement. We note that some variables are numerical while others are categorical.
+
 |Variable|Meaning|Units|
 |:----|:----|:----|
 |1stFlrSF|First Floor square feet|334 - 4692|
-|2ndFlrSF|Second-floor square feet|0 - 2065|
+|2ndFlrSF|Second floor square feet|0 - 2065|
 |BedroomAbvGr|Bedrooms above grade (does NOT include basement bedrooms)|0 - 8|
-|BsmtExposure|Refers to walkout or garden level walls|Gd: Good Exposure; Av: Average Exposure; Mn: Minimum Exposure; No: No Exposure; None: No Basement|
+|BsmtExposure|Refers to walkout or garden level walls|Gd: Good Exposure; Av: Average Exposure; Mn: Mimimum Exposure; No: No Exposure; None: No Basement|
 |BsmtFinType1|Rating of basement finished area|GLQ: Good Living Quarters; ALQ: Average Living Quarters; BLQ: Below Average Living Quarters; Rec: Average Rec Room; LwQ: Low Quality; Unf: Unfinshed; None: No Basement|
 |BsmtFinSF1|Type 1 finished square feet|0 - 5644|
 |BsmtUnfSF|Unfinished square feet of basement area|0 - 2336|
@@ -67,21 +42,40 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 |OverallQual|Rates the overall material and finish of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
 |WoodDeckSF|Wood deck area in square feet|0 - 736|
 |YearBuilt|Original construction date|1872 - 2010|
-|YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
+|YearRemodAdd|Remodel date (same as construction date if no remodeling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
+
+### Project Terms and Jargon
+
+* **Sale price** of a house refers to the current market price of a house with certain attributes.
+
+* **Inherited house** is a house that the client has inherited from grandparents.
 
 ## Business Requirements
 
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
+The client has inherited properties located in Ames, Iowa, and seeks assistance in maximizing their sales price. Despite having a strong understanding of property prices in her own state and residential area, the client is concerned that her current knowledge may lead to inaccurate appraisals in Ames, Iowa. 
 
-Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
+The factors that make a house desirable and valuable in her area may differ significantly from those in Ames, Iowa. To address this, the client has found a public dataset with house prices for Ames, Iowa, and will provide this data for analysis.
 
-* 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-* 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+1. **Correlation Analysis**:
+   - The client is interested in discovering how various house attributes correlate with the sale price. The client expects data visualizations of the correlated variables against the sale price to provide insights into these relationships.
 
-## Hypothesis and how to validate?
+2. **Price Prediction**:
+   - The client is interested in predicting the sale price of her four inherited houses and any other house in Ames, Iowa. The goal is to develop a predictive model that can accurately estimate house prices based on the provided dataset.
 
-* List here your project hypothesis(es) and how you envision validating it (them).
+## Hypotheses and Validation
+
+#### Hypothesis 1: Higher Overall Quality Leads to Higher Sale Prices
+- **Hypothesis**: Houses with higher overall quality ratings (`OverallQual`) tend to have higher sale prices.
+- **Validation**: Perform a correlation analysis between `OverallQual` and `SalePrice`. Create scatter plots and calculate the Pearson and Spearman correlation coefficients to validate the strength and direction of the relationship.
+
+#### Hypothesis 2: Larger Living Areas Result in Higher Sale Prices
+- **Hypothesis**: Houses with larger above-ground living areas (`GrLivArea`) tend to have higher sale prices.
+- **Validation**: Perform a correlation analysis between `GrLivArea` and `SalePrice`. Create scatter plots and calculate the Pearson and Spearman correlation coefficients to validate the strength and direction of the relationship.
+
+#### Hypothesis 3: Newer Houses Have Higher Sale Prices
+- **Hypothesis**: Newer houses (houses built more recently) tend to have higher sale prices.
+- **Validation**: Perform a correlation analysis between `YearBuilt` and `SalePrice`. Create scatter plots and calculate the Pearson and Spearman correlation coefficients to validate the strength and direction of the relationship.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
