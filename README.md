@@ -140,8 +140,34 @@ We will consider a regression model, a supervised model with a continuous output
 
 ## Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+### Page 1: Project Summary
+* **Section 1 - Summary**
+    * Introduction to the project
+    * Description of the dataset, including its source
+    * Link to the README file
+* **Section 2 - Business Requirements**
+    * Description of business requirements
+
+### Page 2: Project Hypotheses
+* Outline the three project hypotheses
+* Present validation of each hypothesis
+
+### Page 3: Feature Correlation Study
+* State Business Requirement 1
+* Overview of the dataset - display the first 5 rows of data and describe the dataset shape
+* Display correlation results
+* Display distributions of correlated features against the target variable (SalePrice)
+* Conclusions
+
+### Page 4: House Price Prediction
+* State Business Requirement 2
+* Widget inputs for prediction (e.g., size, location, number of bedrooms)
+* "Run prediction" button to run inputted data through the ML model and output a predicted sale price
+
+### Page 5: Regression Model Performance Metrics
+* Summary of model performance and metrics
+* Model pipeline, features used to train the model, and how they were selected
+* Documentation of model performance on train and test sets
 
 ## Unfixed Bugs
 
