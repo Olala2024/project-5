@@ -1,3 +1,31 @@
+# HousePricePredictor
+
+HousePricePredictor is a Machine Learning project designed to help real estate investors, homeowners, and property managers predict the sales prices of houses based on various attributes. By leveraging advanced data analysis and machine learning techniques, HousePricePredictor provides accurate and reliable price predictions, enabling users to make informed decisions about property investments and sales. ![Sample Page](/src/images/image.png)
+
+HousePricePredictor helps real estate investors and homeowners accurately appraise property values using a data-driven approach. It offers comprehensive data visualizations, price predictions based on various house attributes, and highlights key features influencing house prices. 
+HousePricePredictor is user-friendly and accessible, catering to real estate investors, homeowners, and property managers.
+
+The dashboard for [HousePricePredictor is hosted on Heroku](https://housepricepredictor-8c23b0f8520c.herokuapp.com/).
+
+# Table of Contents
+
+1. [Dataset Content](#1-dataset-content)
+2. [Project Terms and Jargon](#project-terms-and-jargon)
+3. [Business Requirements](#business-requirements)
+    - [Epics](#epics)
+    - [User Stories](#user-stories)
+4. [Hypotheses and Validation](#hypotheses-and-validation)
+5. [The rationale to map the business requirements to the Data Visualisations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
+6. [ML Business Case](#ml-business-case)
+7. [Dashboard Design](#dashboard-design)
+8. [Testing](#testing)
+9. [Unfixed Bugs](#unfixed-bugs)
+10. [Deployment](#deployment)
+11. [Technologies Used](#technologies-used)
+12. [Forking and Cloning](#forking-and-cloning)
+13. [Credits](#credits)
+14. [Acknowledgements](#acknowledgements)
+
 ## 1. Dataset Content
 
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
@@ -32,7 +60,7 @@ The table below indicates the variables, their description and units of measurem
 |YearRemodAdd|Remodel date (same as construction date if no remodeling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
-### Project Terms and Jargon
+## Project Terms and Jargon
 
 * **Sale price** of a house refers to the current market price of a house with certain attributes.
 
@@ -50,11 +78,34 @@ The factors that make a house desirable and valuable in her area may differ sign
 2. **Price Prediction**:
    - The client is interested in predicting the sale price of her four inherited houses and any other house in Ames, Iowa. The goal is to develop a predictive model that can accurately estimate house prices based on the provided dataset.
 
+### Epics
+
+- Information gathering and data collection.
+- Data visualization, cleaning, and preparation.
+- Model training, optimization, and validation.
+- Dashboard planning, designing, and development.
+- Dashboard deployment and release.
+
+### User Stories
+
+- US1: As a user, I want to know the source and content of the data used in training the model so that I can be confident about the quality of the trained model.
+- US2: As a user, I want to know the project hypotheses and how they were validated so that I get a deeper understanding of the mechanisms that determine sale price.
+- US3: As a client, I want to know which attributes of a house are most correlated with its sale price so that I can base my prediction on the right set of features. (Business Requirement Covered: BR1)
+- US4: As a user, I want to see relevant plots so that I can visualize the relationships between sale price and other features. (Business Requirement Covered: BR1)
+- US5: As a user, I want to have access to the data cleaning and preparation pipeline so that I can quickly predict sale price without reinventing the wheel.
+- US6: As a technical user, I want to learn about the ML steps that were used to arrive at the sale price prediction so that I can understand the model employed. (Business Requirement Covered: BR2)
+- US7: As a technical user, I want to know the model performance so that I can ensure that the predictions are reliable. (Business Requirement Covered: BR2)
+- US8: As a client, I want to have reliable predictions of the sale price of houses I have inherited so that I can sell them at the maximum total price possible. (Business Requirement Covered: BR2)
+- US9: As a client, I want to get a dashboard so that I can display the results of the prediction on a standalone app.
+- US10: As a user, I want to have interactive input widgets so that I can provide real-time house data and predict the sale price. (Business Requirement Covered: BR2)
+
 ## Hypotheses and Validation
 
 #### Hypothesis 1: Higher Overall Quality Leads to Higher Sale Prices
 - **Hypothesis**: Houses with higher overall quality ratings (`OverallQual`) tend to have higher sale prices.
 - **Validation**: Perform a correlation analysis between `OverallQual` and `SalePrice`. Create scatter plots and calculate the Pearson and Spearman correlation coefficients to validate the strength and direction of the relationship.
+
+
 
 #### Hypothesis 2: Larger Living Areas Result in Higher Sale Prices
 - **Hypothesis**: Houses with larger above-ground living areas (`GrLivArea`) tend to have higher sale prices.
@@ -156,6 +207,27 @@ We will consider a regression model, a supervised model with a continuous output
 * Model pipeline, features used to train the model, and how they were selected
 * Documentation of model performance on train and test sets
 
+## Testing
+
+To ensure that the project meets the business requirements and user stories, I conducted manually the following tests:
+
+| **User Story** | **Test** | **Expected Result** |
+|--------------|---------|------------------|
+| **US1: Data Source Documentation** | Verify that the data source and content are documented and accessible. | The documentation should include information about the data source, dataset content, and any preprocessing steps applied. |
+| **US2: Project Hypotheses and Validation** | Review the project hypotheses and their validation steps. | The documentation should clearly state the project hypotheses and provide evidence of their validation through data analysis and visualizations. |
+| **US3: Attribute Correlation** | Verify that the dashboard displays the attributes most correlated with the sale price. | The dashboard should show a list of attributes with their correlation coefficients and relevant visualizations (e.g., scatter plots). |
+| **US4: Relevant Plots** | Verify that the dashboard displays relevant plots showing the relationships between sale price and other features. | The dashboard should include visualizations such as histograms, scatter plots, and correlation matrices. |
+| **US5: Data Cleaning and Preparation Pipeline** | Review the data cleaning and preparation pipeline to ensure it is accessible and functional. | The pipeline should be well-documented and allow users to preprocess data efficiently. |
+| **US6: ML Steps Documentation** | Review the documentation and code to ensure that the ML steps are clearly explained. | The documentation should include a detailed explanation of the ML pipeline, feature engineering, model training, and evaluation steps. |
+| **US7: Model Performance** | Evaluate the model performance using metrics such as Mean Squared Error (MSE) and R² Score. | The model should achieve acceptable performance metrics, indicating reliable predictions. |
+| **US8: Reliable Price Predictions** | Input house attributes into the model and verify the predicted sale price. | The model should provide a reliable and accurate sale price prediction based on the input attributes. |
+| **US9: Dashboard Functionality** | Verify that the dashboard is accessible and displays the prediction results. | The dashboard should be user-friendly and display the prediction results clearly. |
+| **US10: Interactive Input Widgets** | Test the interactive input widgets on the dashboard to ensure they work correctly. | Users should be able to input house attributes in real-time and receive a sale price prediction. |
+
+#### Conclusion
+
+All tests were conducted according to the user stories provided. The application performed well in all areas except for the description of the ML model, which needs improvement. The issue is documented in the unfixed bugs section. Overall, the project meets the business requirements and provides a valuable tool for real estate investors, homeowners, and property managers.
+
 ## Unfixed Bugs
 
 * One of the main bugs in the project is related to the regression model performance metrics page. The page is intended to display the performance metrics of the trained regression model, including Mean Squared Error (MSE) and R² Score for both the training and testing sets. However, due to issues with fitting the feature engineering pipeline and transforming the data, the page does not function as expected. 
@@ -170,16 +242,34 @@ We will consider a regression model, a supervised model with a continuous output
 
 ### Heroku
 
-* The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
-* Set the .python-version Python version to a [Heroku-24](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+* The App live link is: <https://housepricepredictor-8c23b0f8520c.herokuapp.com/>
+The project was deployed to Heroku using the following steps:
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+1. Within your working directory, ensure there is a setup.sh file containing the following:
+```
+mkdir -p ~/.streamlit/
+echo "\
+[server]\n\
+headless = true\n\
+port = $PORT\n\
+enableCORS = false\n\
+\n\
+" > ~/.streamlit/config.toml
+```
+2. Within your working directory, ensure there is a runtime.txt file containing a  version of Python.
+
+3. Within your working directory, ensure there is a Procfile file containing the following:
+```
+web: sh setup.sh && streamlit run app.py
+```
+4. Ensure your requirements.txt file contains all the packages necessary to run the streamlit dashboard.
+5. Update your .gitignore and .slugignore files with any files/directories that you do not want uploading to GitHub or are unnecessary for deployment.
+6. Log in to Heroku and create an App
+7. At the Deploy tab, select GitHub as the deployment method.
+8. Select your repository name and click Search. Once it is found, click Connect.
+9. Select the branch you want to deploy, then click Deploy Branch.
+10. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
+11. If the slug size is too large then add large files not required for the app to the .slugignore file or optimize dependencies removing from requirements.txt unessential for your application.
 
 ## Technologies Used
 
