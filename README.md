@@ -1,16 +1,3 @@
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In your Cloud IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
-
 ## 1. Dataset Content
 
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
@@ -171,7 +158,13 @@ We will consider a regression model, a supervised model with a continuous output
 
 ## Unfixed Bugs
 
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+* One of the main bugs in the project is related to the regression model performance metrics page. The page is intended to display the performance metrics of the trained regression model, including Mean Squared Error (MSE) and R² Score for both the training and testing sets. However, due to issues with fitting the feature engineering pipeline and transforming the data, the page does not function as expected. 
+
+* The primary challenge was ensuring that the feature engineering pipeline was correctly fitted before transforming the data. Despite multiple attempts to resolve this issue, the page still encounters errors, such as the `NotFittedError`, which indicates that the pipeline instance is not fitted yet.
+
+* The bug remains unfixed due to time constraints and the complexity of the issue. While the rest of the application functions correctly, this specific page requires further debugging and testing to ensure it works as intended.
+
+* Future work will involve revisiting this page to properly fit the feature engineering pipeline and accurately display the regression model performance metrics.
 
 ## Deployment
 
@@ -188,28 +181,60 @@ We will consider a regression model, a supervised model with a continuous output
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
-## Main Data Analysis and Machine Learning Libraries
+## Technologies Used
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+The technologies used throughout the development are listed below:
+
+### Languages
+
+* [Python](https://www.python.org/)
+
+### Python Packages
+
+* [Pandas](https://pandas.pydata.org/docs/index.html) - Open source library for data manipulation and analysis.
+* [Numpy](https://numpy.org/doc/stable/index.html) - Adds support for large, multi-dimensional arrays and matrices, and high-level mathematical functions.
+* [Matplotlib](https://matplotlib.org/) - Comprehensive library for creating static, animated and interactive visualisations.
+* [Seaborn](https://seaborn.pydata.org/) - Another data visualisation library for drawing attractive and informative statistical graphics.
+* [Feature-engine](https://feature-engine.trainindata.com/en/latest/) - Library with multiple transformers to engineer and select features for machine learning models.
+* [scikit-learn](https://scikit-learn.org/stable/) - Open source machine learning library that features various algorithms for training a ML model.
+* [SciPy](https://scipy.org/) - Library used for scientific computing and technical computing.
+* [XGBoost](https://xgboost.readthedocs.io/en/stable/) - Optimised distributed gradient boosting library.
+* [Joblib](https://joblib.readthedocs.io/en/stable/) - Provides tools for lightweight pipelining, e.g. caching output values.
+
+### Other Technologies
+
+* [Git](https://git-scm.com/) - For version control
+* [GitHub](https://github.com/) - Code repository and GitHub projects was used as a Kanban board for Agile development
+* [Heroku](https://heroku.com) - For application deployment
+* [VSCode](https://code.visualstudio.com/) - IDE used for development
+
+## Forking and Cloning
+If you wish to fork or clone this repository, please follow the instructions below:
+
+### Forking
+1. In the top right of the main repository page, click the **Fork** button.
+2. Under **Owner**, select the desired owner from the dropdown menu.
+3. **OPTIONAL:** Change the default name of the repository in order to distinguish it.
+4. **OPTIONAL:** In the **Description** field, enter a description for the forked repository.
+5. Ensure the 'Copy the main branch only' checkbox is selected.
+6. Click the **Create fork** button.
+
+### Cloning
+1. On the main repository page, click the **Code** button.
+2. Copy the HTTPS URL from the resulting dropdown menu.
+3. In your IDE terminal, navigate to the directory you want the cloned repository to be created.
+4. In your IDE terminal, type ```git clone``` and paste the copied URL.
+5. Hit Enter to create the cloned repository.
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
+* The PPS heatmap function code was sourced from the Code Institute's "Exploratory Data Analysis Tools" module.
+* The multi-page class was taken from the Code Institute "Data Analysis & Machine Learning Toolkit" streamlit lessons.
+* The icon in the dashboard was taken from [Discuss Streamlit](https://discuss.streamlit.io/t/page-icon/36475).
+* Special thanks to the [Stack Overflow](https://stackoverflow.com/) community for providing solutions to various coding challenges encountered during the project.
+* The structure of this README was inspired by the [CVD Predictor](https://github.com/jfpaliga/CVD-predictor/tree/main) repository.
 
-### Content
+## Acknowledgements 
 
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
-
-## Acknowledgements (optional)
-
-
-* In case you would like to thank the people that provided support through this project.
+* I would like to express my gratitude to my mentor, Mo Shami, for his invaluable support and guidance.
 
